@@ -311,5 +311,5 @@ Devise.setup do |config|
 
   # Secret key to assist with Heroku deployment
 
-  config.secret_key = 'CummingAdf1975!'
+  config.secret_key = ENV["devise_secret_key"]
 end

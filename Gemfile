@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
+gem 'figaro'
 gem 'devise'
 gem 'table_print'
 gem 'simple_form'

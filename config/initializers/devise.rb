@@ -310,6 +310,8 @@ Devise.setup do |config|
   # config.sign_in_after_change_password = true
 
   # Secret key to assist with Heroku deployment
-
   config.secret_key = ENV["devise_secret_key"]
+
+  # Facebook omniauth config
+  config.omniauth :facebook, ENV["facebook_app_id"], ENV["facebook_app_secret"]
 end

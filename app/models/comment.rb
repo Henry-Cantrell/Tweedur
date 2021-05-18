@@ -12,5 +12,5 @@ class Comment < ApplicationRecord
 
     def retrieve_post_commented_on(user_id)
         comments.where(author_id:user_id)
-    end)
+    end
 end

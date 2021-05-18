@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  root 'user_profiles#show'
+  root 'homepage#show'
 
-  devise_for :users do
-    resources :user_profiles
+  resource :home_page
+
+  resources :users do
+    resource :user_profile
   end
+
+  devise_for :users 
+
 end

@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   resource :home_page
 
-  resources :users do
-    resource :user_profile
+  resource :user do
+    resources :user_profiles
   end
 
   devise_for :users 

@@ -44,5 +44,4 @@ RSpec.describe User, :type => :model do
 
         expect(user.created_posts).to be_truthy
     end
-
 end

@@ -27,4 +27,13 @@ class User < ApplicationRecord
     user ||= User.create!(provider: auth.provider, uid: auth.uid, last_name: name_split[0], first_name: name_split[1], email: auth.info.email, password: Devise.friendly_token[0, 20])
       user
   end
+
+  validates_associated :created_posts
+  validates_associated :liked_posts
+  validates_associated :followed_users
+  validates_associated :following_users
+  validates_associated :user_bio
+  validates_associated :user_join_date
+  validates_associated :user_location
+  validates_associated :post_comments
 end

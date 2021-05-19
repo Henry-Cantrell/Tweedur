@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_one :user_location
   # Associations for comment ownership on post
   has_many :post_comments, class_name: 'Comment', foreign_key: 'author_id'
+  # Association for avatar
+  has_one_attached :avatar
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

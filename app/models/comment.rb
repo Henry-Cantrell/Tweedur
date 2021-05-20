@@ -4,4 +4,5 @@ class Comment < ApplicationRecord
 
     validates :post_id, presence: true
     validates :author_id, presence: true
+    validates :body, presence: true, length: { minimum: 1 }
 end

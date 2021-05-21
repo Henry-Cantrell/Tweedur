@@ -1,41 +1,41 @@
-<form action="/users" class="form-horizontal" method='post' >
-<fieldset>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-<!-- Form Name -->
-<legend class="is-size-3">Sign up</legend>
-
-<!-- Text input-->
-<div class="field">
-  <label class="label" for="textinput-1">Username</label>
-  <div class="control">
-    <input type="text" placeholder="Username" class="input ">
-    
+  <fieldset>
+  
+  <!-- Form Name -->
+  <legend class="is-size-3">Sign up</legend>
+  
+  <!-- Text input-->
+  <div class="field">
+    <label class="label">Name</label>
+    <div class="control">
+      <%= f.input :name, required: true, autofocus: true, input_html: { class:"input" }, wrapper: false, label: false, placeholder: "Name" %>
+    </div>
   </div>
-</div>
-
-<!-- Text input-->
-<div class="field">
-  <label class="label" for="textinput-0">Email</label>
-  <div class="control">
-    <input type="text" placeholder="Email" class="input">  
+  
+  <!-- Text input-->
+  <div class="field">
+    <label class="label">Email</label>
+    <div class="control">
+    <%= f.input :email, required: true, input_html: { class:"input" }, wrapper: false, label: false %> 
+    </div>
   </div>
-</div>
-
-<!-- Password input-->
-<div class="field">
-  <label class="label" for="passwordinput-0">Password </label>
+  
+  <!-- Password input-->
+  <div class="field">
+    <label class="label">Password</label>
   <div class="control">
-    <input type="password" placeholder="Password" class="input">
+    <%= f.input :password, required: true, input_html: { class:"input" }, wrapper: false, label: false%>
   </div>
-</div>
-
-<!-- Button -->
-<div class="field">
-  <label class="label" for="singlebutton-0"></label>
+  </div>
+  
+  <div class="field">
+    <label class="label">Password confirmation</label>
   <div class="control">
-    <button class="button is-info" type="submit">Sign up</button>
+    <%= f.input :password_confirmation, required: true, input_html: { class: "input" }, wrapper: false, label: false %>		
   </div>
-</div>
-
-</fieldset>
-</form>
+  </div>
+  
+  </fieldset>
+  <% end %>
+  

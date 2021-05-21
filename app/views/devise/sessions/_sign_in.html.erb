@@ -1,4 +1,4 @@
-<form class="form-horizontal" >
+<form action="/users" class="form-horizontal" method='post' >
 <fieldset>
 
 <!-- Form Name -->
@@ -8,8 +8,7 @@
 <div class="field">
   <label class="label" for="textinput-0">Email</label>
   <div class="control">
-    <input id="textinput-0" name="textinput-0" type="text" placeholder="Email" class="input ">
-    
+    <input value="testing" placeholder="Email" class="input">
   </div>
 </div>
 
@@ -17,15 +16,14 @@
 <div class="field">
   <label class="label" for="passwordinput-0">Password</label>
   <div class="control">
-    <input id="passwordinput-0" name="passwordinput-0" type="password" placeholder="Password" class="input ">
-    
+    <input type="password" placeholder="Password" class="input">
   </div>
 </div>
 
 <!-- Button -->
 <div class="field">
   <div class="control">
-    <button id="singlebutton-0" name="singlebutton-0" class="button is-info">Login</button>
+    <button class="button is-info" type="submit">Login</button>
   </div>
 </div>
 

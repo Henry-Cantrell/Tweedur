@@ -16,7 +16,7 @@
     <nav class="level">
       <div class="level-left">
         <div class="level-item">
-          My App
+          <h1 class="is-size-3 has-text-white has-text-weight-medium">Tweedur: A Ruby on Rails app</h1>
         </div>
       </div>
       <div class="level-right">
@@ -30,11 +30,11 @@
 <section class="section">
   <div class="container">
   <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
     <%= yield %>
   </div>
 </section>

@@ -1,31 +1,33 @@
-<form action="/users" class="form-horizontal" method='post' >
-<fieldset>
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-<!-- Form Name -->
-<legend class="is-size-3">Login</legend>
-
-<!-- Text input-->
-<div class="field">
-  <label class="label" for="textinput-0">Email</label>
-  <div class="control">
-    <input value="testing" placeholder="Email" class="input">
+  <fieldset>
+  
+  <!-- Form Name -->
+  <legend class="is-size-3">Login</legend>
+  
+  <!-- Text input-->
+  <div class="field">
+    <label class="label" for="textinput-0">Email</label>
+    <div class="control">
+    <%= f.input :email, required: false, input_html: { class: "input"}, wrapper: false, label: false %>
+    </div>
   </div>
-</div>
-
-<!-- Password input-->
-<div class="field">
-  <label class="label" for="passwordinput-0">Password</label>
-  <div class="control">
-    <input type="password" placeholder="Password" class="input">
+  
+  <!-- Password input-->
+  <div class="field">
+    <label class="label" for="passwordinput-0">Password</label>
+    <div class="control">
+    <%= f.input :password, required: false, input_html: { class: "input"}, wrapper: false, label: false %>
+    </div>
   </div>
-</div>
-
-<!-- Button -->
-<div class="field">
-  <div class="control">
-    <button class="button is-info" type="submit">Login</button>
+  
+  <!-- Button -->
+  <div class="field">
+    <div class="control">
+    <%= f.button :submit, "Log in", class:"button is-info is-medium" %>
+    </div>
   </div>
-</div>
-
-</fieldset>
-</form>
+  
+  </fieldset>
+  <% end %>
+  

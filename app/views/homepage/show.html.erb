@@ -1,4 +1,11 @@
-<h1>This is the show page you were looking for...</h1>
-<h2><%= @user_email %></h2>
-<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<div class="columns">
+  <div class="column is-three-quarters">
+    <div class="box">
+        <%= render 'new_post_form' %>
+        <div style='margin-bottom: 40px'></div>
+    </div>
+    <%= render 'post_template' %>
+  </div>
+</div>
+
 

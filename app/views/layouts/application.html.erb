@@ -21,7 +21,9 @@
       </div>
       <div class="level-right">
         <p class="level-item">
-          <%= link_to("Placeholder", user_path, :class => "button is-dark is-outlined") %>
+          <% if user_signed_in? %>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, :class => "button is-dark is-outlined" %>
+          <% end %>
         </p>
       </div>
     </nav>

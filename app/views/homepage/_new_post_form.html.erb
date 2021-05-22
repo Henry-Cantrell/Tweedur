@@ -1,0 +1,18 @@
+<%= simple_form_for @user do |f| %>
+<fieldset>
+    
+<!-- Form Name -->
+<legend class="is-size-3">Make a new post</legend>
+
+<!-- Search input-->
+<div class="field">
+    <label class="label" for="searchinput-0"></label>    
+    <div class="control">
+        <%= f.input :name, required: true, autofocus: true, input_html: { class:"input is-rounded" }, wrapper: false, label: false, placeholder: "Write your post here" %>     
+    </div>
+</div>    
+
+<%= f.button :submit, "Post", class:"button is-info" %>
+
+</fieldset>
+<% end %>

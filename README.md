@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hello, thanks for checking my project out! 
 
-Things you may want to cover:
+This project represents my version of the capstone project for The Odin Project's Ruby on Rails course. 
 
-* Ruby version
+Find the project details here: https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/final-project
 
-* System dependencies
+This project uses the following gems:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+rails_refactor
+omniauth-facebook
+omniauth-rails_csrf_protection
+figaro
+devise
+table_print
+simple_form
+bulma-rails
+rspec-rails
+guard-rspec

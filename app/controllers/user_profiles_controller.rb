@@ -1,5 +1,5 @@
 class UserProfilesController < ApplicationController
     def show
-        @user_email = current_user.email
+        @user = User.find(params[:id])
     end
 end

@@ -22,7 +22,8 @@
       <div class="level-right">
         <p class="level-item">
           <% if user_signed_in? %>
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, :class => "button is-dark is-outlined" %>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, :class => "button is-black" %>
+            <%= link_to 'Profile', user_user_profile_path(current_user.id), method: :get, :class => "button is-black" %>
           <% end %>
         </p>
       </div>

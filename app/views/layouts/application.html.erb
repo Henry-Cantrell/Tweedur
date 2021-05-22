@@ -19,14 +19,16 @@
           <h1 class="is-size-3 has-text-white has-text-weight-medium">Tweedur: A Ruby on Rails app</h1>
         </div>
       </div>
-      <div class="level-right">
-        <p class="level-item">
-          <% if user_signed_in? %>
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, :class => "button is-black" %>
-            <%= link_to 'Profile', user_user_profile_path(current_user.id), method: :get, :class => "button is-black" %>
-          <% end %>
-        </p>
-      </div>
+      <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+  <ul>
+    <% if user_signed_in? %>
+      <li><%= link_to 'Home', root_path, method: :get %></li>
+      <li><%= link_to 'Profile', user_user_profile_path(current_user.id), method: :post %></li>
+      <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+      <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+    <% end %>
+  </ul>
+</nav>
     </nav>
   </div>
 </header>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'homepage#show'
+  root 'home_pages#show'
 
-  resource :home_page
+  resource :home_pages
 
   resource :user do
     resources :user_profiles

@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.1'
 
 # Gems added by app creator
+gem 'rails_refactor'
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
 gem 'figaro'

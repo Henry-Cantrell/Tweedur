@@ -1,4 +1,4 @@
-class HomepageController < ApplicationController
+class HomePagesController < ApplicationController
     def show
         @user = current_user
     end
@@ -7,7 +7,7 @@ class HomepageController < ApplicationController
         @user = current_user
         @new_post = @user.created_posts.build(post_params)
 
-        if @new_post.save
+        if @new_post.save!
             redirect_to root_path
         end
     end
@@ -15,6 +15,6 @@ class HomepageController < ApplicationController
     private
 
     def post_params
-        params.require(post).permit(:body, :creator_id)
+        params.require(:new_post).permit(:body, :creator_id)
     end
 end

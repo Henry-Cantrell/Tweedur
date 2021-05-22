@@ -8,13 +8,13 @@ Find the project details here: https://www.theodinproject.com/paths/full-stack-r
 
 This project uses the following gems:
 
-*rails_refactor
-*omniauth-facebook
-*omniauth-rails_csrf_protection
-*figaro
-*devise
-*table_print
-*simple_form
-*bulma-rails
-*rspec-rails
-*guard-rspec
+* rails_refactor
+* omniauth-facebook
+* omniauth-rails_csrf_protection
+* figaro
+* devise
+* table_print
+* simple_form
+* bulma-rails
+* rspec-rails
+* guard-rspec

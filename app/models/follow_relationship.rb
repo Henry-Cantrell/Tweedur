@@ -12,7 +12,7 @@ class FollowRelationship < ApplicationRecord
         #which will be looped in views
     end
 
-    private
+    private 
 
     def get_follower_ids
         #return [array of IDs]

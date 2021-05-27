@@ -5,12 +5,11 @@ class UserProfilesController < ApplicationController
         #Determine if user accessing profile is current user for 
         #displaying the edit button
 
-        @current_user = false
+        @edit_profile_button = false
 
         if @user.id == current_user.id
-            @current_user = true
+            @edit_profile_button = true
         end
 
-        @user_posts = 
     end
 end

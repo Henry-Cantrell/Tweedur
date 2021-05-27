@@ -27,7 +27,7 @@
           <p>
             <strong>Posts</strong> 
             <br>
-            38
+            <%= @user.created_posts.length %>
           </p>
         </div>
       </div>
@@ -36,7 +36,7 @@
           <p>
             <strong>Followers</strong> 
             <br>
-            34
+            <%= @user.following_users.length %>
           </p>
         </div>
     </div>
@@ -45,7 +45,7 @@
           <p>
             <strong>Followed</strong> 
             <br>
-            255
+            <%= @user.followed_users.length %>
           </p>
         </div>
     </div>

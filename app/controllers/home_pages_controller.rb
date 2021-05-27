@@ -1,6 +1,8 @@
 class HomePagesController < ApplicationController
     def show
         @user = current_user
+        @followed_users = @users.followed_users
+        @followed_users_posts = nil
     end
 
     def create

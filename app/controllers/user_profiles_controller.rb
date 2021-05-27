@@ -2,8 +2,7 @@ class UserProfilesController < ApplicationController
     def show
         @user = User.find(params[:id])
 
-        #Determine if user accessing profile is current user for 
-        #displaying the edit button
+        #Uses devise to determine if current user is 
 
         @edit_profile_button = false
 

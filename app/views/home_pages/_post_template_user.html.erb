@@ -9,7 +9,9 @@
   <div class="media-content">
     <div class="content">
       <p>
+        <%= link_to (user_user_profile_path(@user.id)), class:"has-text-black" do %>
         <strong><%= post.creator.last_name %></strong> <small><%= post.creator.email %></small> <small>31m</small>
+        <% end %>
         <br>
         <%= post.body %>
       </p>

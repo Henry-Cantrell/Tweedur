@@ -40,13 +40,22 @@
   <% end %>
 </li>
 <li>
-  <%= link_to user_user_profile_path(current_user.id), method: :get do %>
-    <span class="icon is-small">
-      <i class="fas fa-bell" aria-hidden="true"></i>
-    </span>
-    <span class='has-text-white'>Notifications</span>
+<%= link_to method: :get do %>
+  <div class="dropdown is-hoverable">
+  <div class="dropdown-trigger">  
+    <i class="fas fa-bell" aria-hidden="true"></i>
+    <span class='has-text-white'>Notifications</span> 
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+    <div class="dropdown-content">
+      <div class="dropdown-item">
+        <p>This is where the template for notifications should probably go.</p>
+      </div>
+    </div>
+  </div>
+  </div>
   <% end %>
-</li>
+  </li>
 <li>
   <%= link_to destroy_user_session_path, method: 'delete' do %>
     <span class="icon is-small">

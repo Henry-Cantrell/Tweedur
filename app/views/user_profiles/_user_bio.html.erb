@@ -49,6 +49,7 @@
           </p>
         </div>
     </div>
+    <% if @user.id != current_user.id %>
     <div class='column'>
       <div class='content'>
         <p>
@@ -56,6 +57,7 @@
         </p>
       </div>
     </div>
+  <% end %>
   </div>
   </div>
   </div>

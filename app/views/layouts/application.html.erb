@@ -44,7 +44,7 @@
     <div class="dropdown-trigger">  
       <i class="fas fa-bell" style="color:#3273dc; margin-left:12px; margin-right:5px;" aria-hidden="true"></i>
       <span class='has-text-white' style='margin-right:12px;'>
-      Notifications 
+      Follow requests 
       <% if @follow_requests_length >= 1 %> 
       <%= @follow_requests_length %> 
       <% end %> 
@@ -53,8 +53,13 @@
   <div class="dropdown-menu" id="dropdown-menu4" role="menu">
     <div class="dropdown-content">
       <div class="dropdown-item">
-        <%= %>
-        <p>bob@bob.com has requested to follow you <button class="button is-success is-small is-outlined">Accept</button> <button class="button is-danger is-small is-outlined">Decline</button>
+        <% if @follow_requests_length >= 1 %>
+        <% @follow_requests.each do |follow_request| %>
+        <p><%= follow_request.followed.email %> has requested to follow you <button class="button is-success is-small is-outlined">Accept</button> <button class="button is-danger is-small is-outlined">Decline</button>
+        <% end %>
+        <% else %>
+        <p>You have no follow requests at this time.</p>
+        <% end %>
       </div>
     </div>
   </div>

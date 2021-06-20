@@ -4,7 +4,6 @@ class FollowRelationship < ApplicationRecord
 
     validates :followed_id, presence: true
     validates :follower_id, presence: true
-    validates :accept_toggle, presence: true
     validates_uniqueness_of :followed_id, scope: [:follower_id]
 
     def find_followed_user_posts

@@ -1,4 +1,5 @@
 <% @users.each do |user| %>
+<div class='column is-half'>
 <%= link_to(user_user_profile_path(user.id)) do %>
 <div class="card">
   <div class="card-content">
@@ -18,6 +19,7 @@
       <%= user.user_bio %>
     </div>
   </div>
+</div>
 </div>
 <% end %>
 <% end %>

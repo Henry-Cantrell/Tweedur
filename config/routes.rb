@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'users/index'
   root 'home_pages#show'
 
   resource :home_pages
+  resources :discover_pages
 
   resource :user do
     resources :user_profiles

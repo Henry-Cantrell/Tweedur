@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     before_action :authenticate_user!
-    before_action :notifications__display_navbar
+    before_action :notifications_display_navbar
 
     def notifications_display_navbar
         unless current_user.nil?

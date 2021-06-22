@@ -53,9 +53,25 @@
       <div class="dropdown-item">
         <% if @follow_requests_length >= 1 %>
         <% @follow_requests.each do |follow_request| %>
-        <p><%= follow_request.followed.email %> has requested to follow you 
-            <%= render partial: "partials/accept_notif", locals: {id: follow_request.id} %>
-            <%= render partial: "partials/decline_notif", locals: {id: follow_request.id} %>
+          <nav class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <p>
+              <%= follow_request.followed.email %> has requested to follow you
+              </p>
+            </div>
+            <div class="level-item">
+              <div class="field has-addons">
+                <p class="control">
+                <%= render partial: "partials/accept_notif", locals: {id: follow_request.id} %>
+                </p>
+                <div style = 'margin-left:5px'/>
+                <p class="control">
+                <%= render partial: "partials/decline_notif", locals: {id: follow_request.id} %>
+                </p>
+              </div>
+            </div>
+          </div>
         <% end %>
         <% else %>
         <p>You have no follow requests at this time.</p>

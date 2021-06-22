@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
         end
     end
 
-    def notifications_accept
+    def accept_notif
         @follow_request_accept = FollowRelationship.find_by(id: params[:id])
         @follow_request_toggle = @follow_request_accept.update(accept_toggle:true)
 
@@ -18,8 +18,12 @@ class ApplicationController < ActionController::Base
         end
     end
 
-    def notifications_decline
+    def decline_notif
+        @follow_request_decline = FollowRelationship.find_by(id: params[:id])
 
+        if @follow_request_decline.destroy!
+            redirect_to root_path
+        end
     end
 
 end

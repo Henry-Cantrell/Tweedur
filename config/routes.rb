@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resource :home_pages
   resources :discover_pages
-  resources :follow_relationships
+  resources :notifications
 
   resource :user do
     resources :user_profiles

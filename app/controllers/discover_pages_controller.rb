@@ -1,7 +1,7 @@
 class DiscoverPagesController < ApplicationController
 
-    def index
-        @users = User.all
+    def show
+        @users = User.where.not(id: current_user.id)
     end
 
 end

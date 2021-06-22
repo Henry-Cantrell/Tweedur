@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     end
 
     def notifications_accept
-        @follow_request_accept = FollowRelationship.find_by(id: params[:id)
+        @follow_request_accept = FollowRelationship.find_by(id: params[:id])
         @follow_request_toggle = @follow_request_accept.update(accept_toggle:true)
 
         if @follow_request_toggle.save!

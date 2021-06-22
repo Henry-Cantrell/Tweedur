@@ -54,7 +54,7 @@
         <% if @follow_requests_length >= 1 %>
         <% @follow_requests.each do |follow_request| %>
         <p><%= follow_request.followed.email %> has requested to follow you 
-            <button class = "button is-success is-small is-outlined">Accept</button>
+            <%= render partial: "partials/accept_notif", locals: {id: follow_request.id} %>
             <button class="button is-danger is-small is-outlined">Decline</button>
         <% end %>
         <% else %>

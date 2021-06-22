@@ -1,0 +1,6 @@
+<%= simple_form_for :accept_notif, method: 'post' do |f| %>
+    <%= f.hidden_field :id, value: id %>
+    <%= button_tag(type: 'submit', class: "button is-success is-small is-outlined") do %>
+        Decline
+    <% end %>
+<% end %>

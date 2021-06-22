@@ -4,7 +4,7 @@ class NotificationsController < ApplicationController
         @follow_request = FollowRelationship.find(params[:id])
 
         if @follow_request.update(accept_toggle:true)
-            redirect_to root_path
+            redirect_back(fallback_location: root_path)
         end
     end
 
@@ -12,7 +12,7 @@ class NotificationsController < ApplicationController
         @follow_request = FollowRelationship.find(params[:id])
 
         if @follow_request.destroy!
-            redirect_to root_path
+            redirect_back(fallback_location: root_path)
         end
     end
 end

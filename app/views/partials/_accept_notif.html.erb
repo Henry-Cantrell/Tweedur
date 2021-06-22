@@ -1,7 +1,3 @@
 <%= simple_form_for :accept_notif, url: '/notifications', method: 'post' do |f| %>
-    <%= f.hidden_field :id, value: :id %>
-    <%= f.hidden_field :accepted, value: true %>
-    <%= button_tag(type: 'submit', class: "button is-success is-small is-outlined") do %>
-        Accept
-    <% end %>
-<% end %>
+    <%= f.button :submit, 'Accept', class: "button is-success is-small is-outlined", name: 'id', value: follow_request.id %>
+<% end %>s

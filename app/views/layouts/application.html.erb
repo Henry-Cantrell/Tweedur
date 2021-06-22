@@ -63,11 +63,11 @@
             <div class="level-item">
               <div class="field has-addons">
                 <p class="control">
-                <%= render partial: "partials/accept_notif", locals: {id: follow_request.id} %>
+                <%= render partial: "partials/accept_notif", locals: {follow_request: follow_request} %>
                 </p>
-                <div style = 'margin-left:5px'/>
+                <div style = 'margin-left:5px'>
                 <p class="control">
-                <%= render partial: "partials/decline_notif", locals: {id: follow_request.id} %>
+                <%= render partial: "partials/decline_notif", locals: {follow_request: follow_request} %>
                 </p>
               </div>
             </div>

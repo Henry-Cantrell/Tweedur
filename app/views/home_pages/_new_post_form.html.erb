@@ -1,27 +1,21 @@
 <%= simple_form_for :new_post, url: '/home_pages', method: 'post' do |f| %>
     <%= f.hidden_field :creator_id, value: @user.id %>
-    
         <fieldset>
-    
         <legend class="is-size-3">Make a new post</legend>
-    
         <div class="field">
             <label class="label" for="searchinput-0"></label>
             <div class="control">
                 <%= f.input :body, required: true, autofocus: true, input_html: { class:"input is-rounded" }, wrapper: false, label: false, placeholder: "Write your post here" %>
             </div>
         </div>
-    
         <div style='margin-top:25px'>
             <div class="columns is-left">
                 <%= f.button :submit, "Post", class:"button is-info", style:'margin-left:18px' %>
                 <div style="margin-left:10px">
-                </div>
-                <%= render 'photo_upload' %>
-                </div>
+            </div>
+            <%= render 'photo_upload' %>
+            </div>
         </div>
-    
-        </fieldset>
-    
-    <% end %>
+    </fieldset>
+<% end %>
     

@@ -9,4 +9,10 @@ class ApplicationController < ActionController::Base
         end
     end
 
+    def notifications_accept
+    end
+
+    def notifications_decline
+    end
+
 end

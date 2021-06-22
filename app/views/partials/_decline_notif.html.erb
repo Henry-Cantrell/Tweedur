@@ -1,0 +1,4 @@
+<%= simple_form_for :accept_notif, url: '/notifications', method: 'delete' do |f| %>
+    <%= f.hidden_field :id, name: :id, value: follow_request.id %>
+    <%= f.button :submit, 'Decline', class: "button is-danger is-small is-outlined"%>
+<% end %>

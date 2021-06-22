@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'home_pages#show'
 
   resource :home_pages
-  resources :discover_pages
-  resources :notifications
+  resource :discover_pages
+  resource :notifications
 
   resource :user do
     resources :user_profiles

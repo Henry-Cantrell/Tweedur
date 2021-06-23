@@ -14,6 +14,14 @@ class HomePagesController < ApplicationController
         end
     end
 
+    def destroy
+        @trash_post = current_user.created_posts.find_by(id: [params:id])
+
+        if @trash_post.destroy!
+            redirect_back(fallback_location: root_path)
+        end
+    end
+
     private
 
     def post_params

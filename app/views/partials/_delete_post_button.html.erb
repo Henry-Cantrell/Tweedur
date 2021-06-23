@@ -1,0 +1,4 @@
+<%= simple_form_for :delete_post , url: '/posts', method: 'delete' do |f| %>
+	<%= f.hidden_field :id, value: post.id %>
+	<%= f.button :submit, 'Delete', class: 'button is-outlined is-small' %>
+<% end %>

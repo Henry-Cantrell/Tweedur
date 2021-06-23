@@ -1,0 +1,6 @@
+<%= simple_form_for :follow_relationship, url: '/follow_relationships', method: 'post' do |f| %>
+	<%= f.hidden_field :follower_id, name: :follower_id, value: follower_id %>
+	<%= f.hidden_field :followed_id, name: :followed_id, value: followed_id %>
+	<%= f.hidden_field :accept_toggle, name: :accept_toggle, value: false %>
+	<%= f.button :submit, 'Follow', class: "button is-success is-outlined"%>
+<% end %>

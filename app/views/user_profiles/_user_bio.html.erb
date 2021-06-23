@@ -52,9 +52,7 @@
     <% if @user.id != current_user.id %>
     <div class='column'>
       <div class='content'>
-        <p>
-          <button class='button is-info'>Follow</button>
-        </p>
+        <%= render partial: "follow_partial", locals: {follower_id: current_user.id, followed_id: @user.id} %>
       </div>
     </div>
   <% end %>

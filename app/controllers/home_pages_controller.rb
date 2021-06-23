@@ -1,8 +1,7 @@
 class HomePagesController < ApplicationController
     def show
         @user = current_user
-        @followed_users = @user.followed_users
-        @followed_users_posts = nil
+        @follow_relationships = @user.followed_users.where(accept_toggle:true)
     end
 
     def create

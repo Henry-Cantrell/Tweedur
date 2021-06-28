@@ -52,7 +52,11 @@
     <% if @user.id != current_user.id %>
     <div class='column'>
       <div class='content'>
-        <%= render partial: "follow_partial", locals: {follower_id: current_user.id, followed_id: @user.id} %>
+	<% if @follow_relationship == nil %>
+      <%= render partial: "follow_partial", locals: {follower_id: current_user.id, followed_id: @user.id} %>
+	<% else %>
+	    <%= render partial: "unfollow_partial", locals: {follower_id: current_user.id, followed_id: @user.id} %>
+	<% end %>
       </div>
     </div>
   <% end %>

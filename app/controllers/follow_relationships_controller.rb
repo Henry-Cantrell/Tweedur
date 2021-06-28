@@ -10,6 +10,11 @@ class FollowRelationshipsController < ApplicationController
     end
 
     def destroy
+        @destroy_follow_relationship = FollowRelationship.find_by(followed_id: params[:followed_id], follower_id: params[:follower_id] )
+
+        if @destroy_follow_relationship.destroy
+            redirect_back(fallback_location: root_path)
+        end
     end
 
     private
@@ -17,6 +22,5 @@ class FollowRelationshipsController < ApplicationController
     def fr_params
         params.permit(:follower_id, :followed_id, :accept_toggle)
     end
-
 
 end

@@ -1,0 +1,5 @@
+<%= simple_form_for :follow_relationship, url: '/follow_relationships', method: 'delete' do |f| %>
+	<%= f.hidden_field :follower_id, name: :follower_id, value: follower_id %>
+	<%= f.hidden_field :followed_id, name: :followed_id, value: followed_id %>
+	<%= f.button :submit, 'Unfollow', class: "button is-success is-outlined" %>
+<% end %>

@@ -9,6 +9,11 @@ class LikesController < ApplicationController
     end
 
     def destroy
+        @like = Like.find_by(like_params)
+
+        if @like.destroy!
+            redirect_back(fallback_location: root_path)
+        end
     end
 
     private

@@ -4,9 +4,16 @@
         <%= render 'new_post_form' %>
         <div style='margin-bottom: 40px'></div>
     </div>
-    <%= render partial: "partials/post_template_user" %>
-    <%= render partial: "post_template_others" %>
-    <%=  %>
+	<% unless @follow_relationships.empty? %>
+  		<% @follow_relationships.each do |relationship| %>
+			<% relationship.follower.created_posts.each do |post| %>
+    				<%= render partial: "partials/post_template_others",locals: {post: post, current_user: current_user} %>
+			<% end %>
+		<% end %>
+	<% end %>
+	<% @user.created_posts.each do |post| %>
+    		<%= render partial: "partials/post_template_user", locals: {post: post} %>
+	<% end %>
   </div>
 </div>
 

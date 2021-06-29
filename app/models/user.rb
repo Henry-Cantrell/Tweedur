@@ -33,7 +33,7 @@ class User < ApplicationRecord
   validates_associated :created_posts
   validates_associated :followed_users
   validates_associated :following_users
-  validates_associated :user_bio
+  validates_associated :bio
   validates_associated :user_join_date
   validates_associated :user_location
   validates_associated :post_comments

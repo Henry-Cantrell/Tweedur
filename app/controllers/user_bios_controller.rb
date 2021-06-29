@@ -3,9 +3,9 @@ class UserBiosController < ApplicationController
 
     def create
         @user = current_user
-        @user_bio = current_user.bio.build(bio_params)
+        @user_bio = current_user.build_bio(bio_params)
 
-        if @user_bio.create!
+        if @user_bio.save!
             redirect_back(fallback_location: root_path)
         end
 
@@ -14,7 +14,7 @@ class UserBiosController < ApplicationController
     private
 
     def bio_params
-        params.require(:bio).permit(:bio)
+        params.require(:bio).permit(:description, :user_id)
     end
 
 end

@@ -39,4 +39,6 @@
   </div>
 </article>
 </div>
+<% post.comments.each do |comment| %>
 <%= render partial: "partials/post_comment", locals: {post: post} %>
+<% end %>

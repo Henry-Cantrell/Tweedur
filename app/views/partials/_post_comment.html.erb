@@ -14,7 +14,7 @@
         <strong><%= post.creator.last_name %></strong> <small><%= post.creator.email %></small> <small>31m</small>
         <% end %>
         <br>
-        <%= post.body %>
+        <%= comment.body %>
       </p>
     </div>
     <nav class="level is-mobile">
@@ -26,7 +26,7 @@
 	  <% if current_user.liked_posts.where(liked_post_id: post.id).empty? %>
           	<%= render partial: "partials/like_button", locals: {post: post, current_user: current_user} %>
 	  <% else %>
-		        <%= render partial: "partials/unlike_button", locals: {post: post, current_user: current_user} %> 
+		<%= render partial: "partials/unlike_button", locals: {post: post, current_user: current_user} %> 
 	  <% end %>
         </a>
         <div/>

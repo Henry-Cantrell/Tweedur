@@ -21,7 +21,11 @@
           <span class="icon is-small"><i class="fas fa-reply"></i></span>
         </a>
         <a class="level-item">
-          <%= render partial: "partials/like_button", locals: {post: post, current_user: current_user} %>
+	  <% if current_user.liked_posts.where(liked_post_id: post.id).empty? %>
+          	<%= render partial: "partials/like_button", locals: {post: post, current_user: current_user} %>
+	  <% else %>
+		<%= render partial: "partials/unlike_button", locals: {post: post, current_user: current_user} %> 
+	  <% end %>
         </a>
         <div/>
         <%= post.likes.length %>

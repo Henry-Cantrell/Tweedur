@@ -4,4 +4,5 @@ class Like < ApplicationRecord
 
     validates :liking_user_id, presence: true
     validates :liked_post_id, presence: true
+    validates_uniqueness_of :liking_user_id, scope: [:liked_post_id]
 end

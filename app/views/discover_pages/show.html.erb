@@ -15,8 +15,11 @@
       </div>
     </div>
     <div class="content">
-    User bio text to see if formatting works....
-      <%= user.user_bio %>
+      <% if user.user_bio.blank? %>
+	My name is <%= user.last_name %>! Please view my profile :)
+      <% else %>
+	<%= user.user_bio %>
+      <% end %>
     </div>
   </div>
 </div>

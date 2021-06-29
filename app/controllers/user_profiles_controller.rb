@@ -16,4 +16,20 @@ class UserProfilesController < ApplicationController
         end
 
     end
+
+    def update
+        @user = User.find(params[:id])
+
+        if @user.user_bio.update!(bio_params)
+            redirect_back(fallback_location: root_path)
+        end
+
+    end
+
+    private
+
+    def bio_params
+        params.require(:bio).permit(:bio)
+    end
+
 end

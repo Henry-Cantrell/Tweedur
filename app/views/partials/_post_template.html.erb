@@ -38,7 +38,8 @@
     <% end %>
   </div>
 </article>
-</div>
+<%= render partial: "partials/post_comment_form" %>
 <% post.comments.each do |comment| %>
 <%= render partial: "partials/post_comment", locals: {post: post} %>
 <% end %>
+</div>

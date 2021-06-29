@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resource :notifications
   resource :follow_relationships
   resource :posts
+  resource :likes
 
   resource :user do
     resources :user_profiles

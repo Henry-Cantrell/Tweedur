@@ -22,8 +22,10 @@
           <span class="icon is-small"><i class="fas fa-reply"></i></span>
         </a>
         <a class="level-item">
-          <span class="icon is-small"><i class="fas fa-heart"></i></span>
+          <%= render partial: "partials/like_button", locals: {post: post, current_user: current_user} %>
         </a>
+        <div/>
+        <%= post.likes.length %>
       </div>
     </nav>
   </div>

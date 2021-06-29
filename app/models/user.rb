@@ -31,7 +31,6 @@ class User < ApplicationRecord
   end
 
   validates_associated :created_posts
-  validates_associated :liked_posts
   validates_associated :followed_users
   validates_associated :following_users
   validates_associated :user_bio

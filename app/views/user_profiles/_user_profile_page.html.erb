@@ -13,7 +13,9 @@
                 <strong><%= @user.last_name %></strong> 
                 <br>
                 <p class='is-size-6'>
-                  <%= @user.bio %>
+		<% if @user_bio != nil %>
+                  <%= @user.bio.description %>
+		<% end %>
                 </p>
               </p>
                 <% if @user.id == current_user.id %>

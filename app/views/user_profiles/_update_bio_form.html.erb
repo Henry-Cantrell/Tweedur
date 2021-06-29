@@ -1,0 +1,5 @@
+<%= simple_form_for :bio, url: '/user_bios', method: 'put' do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.input :description, required: true, autofocus: true, input_html: { class:"input is-rounded" }, wrapper: false, label: false, placeholder: "Change my bio" %>
+  <%= f.button :submit %>
+<% end %>

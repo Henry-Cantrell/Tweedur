@@ -7,7 +7,11 @@
   <div class="dropdown-menu" id="dropdown-menu4" role="menu">
     <div class="dropdown-content">
       <div class="dropdown-item">
-        <%= render partial:'edit_bio_form' %>
+	<% if @user.bio == nil %>
+        	<%= render partial:'new_bio_form' %>
+	<% else %>
+		<%= render partial:'update_bio_form' %>
+	<% end %>
       </div>
     </div>
   </div>

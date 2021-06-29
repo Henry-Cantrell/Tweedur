@@ -15,10 +15,10 @@
       </div>
     </div>
     <div class="content">
-      <% if user.user_bio.blank? %>
+      <% if user.bio.blank? %>
 	My name is <%= user.last_name %>! Please view my profile :)
       <% else %>
-	<%= user.user_bio %>
+	<%= user.bio.description %>
       <% end %>
     </div>
   </div>

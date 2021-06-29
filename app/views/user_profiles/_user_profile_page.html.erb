@@ -17,7 +17,7 @@
                 </p>
               </p>
                 <% if @user.id == current_user.id %>
-                    <button class='button is-outlined is-small'>Change my bio</button>
+                    <%= render partial:"change_bio" %>
                 <% end %>
             </div>
           </div>

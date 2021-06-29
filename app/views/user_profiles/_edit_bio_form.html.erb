@@ -1,4 +1,4 @@
-<%= simple_form_for :bio, url: '/user_bios', method: 'put' do |f| %>
+<%= simple_form_for :bio, url: '/user_bios', method: 'post' do |f| %>
   <%= f.input :body, required: true, autofocus: true, input_html: { class:"input is-rounded" }, wrapper: false, label: false, placeholder: "Change my bio" %>
   <%= f.button :submit %>
 <% end %>

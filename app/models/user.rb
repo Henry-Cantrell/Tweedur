@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :followed_users, class_name: 'FollowRelationship', foreign_key: 'followed_id'
   has_many :following_users, class_name: 'FollowRelationship', foreign_key: 'follower_id'
   # Associations for profile data
-  has_one :user_bio
+  has_one :bio, class_name:'UserBio', foreign_key: 'user_id'
   has_one :user_join_date
   has_one :user_location
   # Associations for comment ownership on post

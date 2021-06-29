@@ -4,15 +4,22 @@
         <%= render 'new_post_form' %>
         <div style='margin-bottom: 40px'></div>
     </div>
-	<% unless @follow_relationships.empty? %>
-  		<% @follow_relationships.each do |relationship| %>
+	<% unless @followed_user_posts.empty? %>
+  		<% @followed_user_posts.each do |relationship| %>
 			<% relationship.follower.created_posts.each do |post| %>
-    				<%= render partial: "partials/post_template_others",locals: {post: post, current_user: current_user} %>
+    				<%= render partial: "partials/post_template",locals: {post: post, current_user: current_user} %>
+			<% end %>
+		<% end %>
+	<% end %>
+	<% unless @following_user_posts.empty? %>
+  		<% @following_user_posts.each do |relationship| %>
+			<% relationship.followed.created_posts.each do |post| %>
+    				<%= render partial: "partials/post_template",locals: {post: post, current_user: current_user} %>
 			<% end %>
 		<% end %>
 	<% end %>
 	<% @user.created_posts.each do |post| %>
-    		<%= render partial: "partials/post_template_user", locals: {post: post} %>
+    		<%= render partial: "partials/post_template", locals: {post: post, current_user: current_user} %>
 	<% end %>
   </div>
 </div>

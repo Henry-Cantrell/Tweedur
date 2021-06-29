@@ -8,7 +8,7 @@
   <div class="media-content">
     <div class="content">
       <p>
-        <%= link_to (user_user_profile_path(@user.id)), class:"has-text-black" do %>
+        <%= link_to (user_user_profile_path(post.creator.id)), class:"has-text-black" do %>
         <strong><%= post.creator.last_name %></strong> <small><%= post.creator.email %></small> <small>31m</small>
         <% end %>
         <br>
@@ -29,7 +29,9 @@
     </nav>
   </div>
   <div class="media-right">
-    <%= render partial: "partials/delete_post_button", locals: {post: post} %>
+    <% if post.creator.id == current_user.id %>
+    	<%= render partial: "partials/delete_post_button", locals: {post: post} %>
+    <% end %>
   </div>
 </article>
 </div>

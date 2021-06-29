@@ -1,2 +1,5 @@
 <%= render 'user_bio' %>
-<%= render partial: "partials/post_template_user" %>
+
+<% @user.created_posts.each do |post| %>
+    	<%= render partial: "partials/post_template", locals: {post: post, current_user: current_user} %>
+<% end %>

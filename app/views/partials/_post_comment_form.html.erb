@@ -1,8 +1,8 @@
-<%= simple_form_for :comment, url: '' do |f| %>
+<%= simple_form_for :comment, url: '/comments', method:'post' do |f| %>
   <%= f.hidden_field :author_id, value: current_user.id %>
   <%= f.hidden_field :post_id, value: post.id %>
-  <%= f.input :comment, input_html: { class: "input is-rounded", style: "margin-top:5px" }%>
-  <%= f.button :submit, input_html: { class: "button" } %>
+   <%= f.input :body, required: true, autofocus: true, input_html: { class:"input is-rounded", style:"margin-top:5px" }, wrapper: false, label: false, placeholder: "Make a comment" %>
+  <button class="button is-info is-small is-outlined", type="submit" style="margin-top:5px">Comment</button>
 <% end %>
 
 

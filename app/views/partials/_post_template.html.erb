@@ -39,7 +39,7 @@
 </article>
 <%= render partial: "partials/post_comment_form", locals: {post: post, current_user: current_user} %>
 <% post.comments.each do |comment| %>
-<%= render partial: "partials/post_comment", locals: {post: post} %>
+<%= render partial: "partials/post_comment", locals: {post: post, comment: comment} %>
 <% end %>
 </div>
 </div>

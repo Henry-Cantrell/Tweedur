@@ -4,6 +4,8 @@
         <%= render 'new_post_form' %>
         <div style='margin-bottom: 40px'></div>
     </div>
+</div>
+</div>
 	<% unless @followed_user_posts.empty? %>
   		<% @followed_user_posts.each do |relationship| %>
 			<% relationship.follower.created_posts.each do |post| %>
@@ -21,7 +23,6 @@
 	<% @user.created_posts.each do |post| %>
     		<%= render partial: "partials/post_template", locals: {post: post, current_user: current_user} %>
 	<% end %>
-  </div>
-</div>
+
 
 

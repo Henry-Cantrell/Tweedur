@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resource :posts
   resource :likes
   resource :user_bios
+  resource :comments
 
   resource :user do
     resources :user_profiles

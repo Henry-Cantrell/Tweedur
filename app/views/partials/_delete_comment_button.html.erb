@@ -1,0 +1,4 @@
+<%= simple_form_for :delete_comment, url: '/comments', method: 'delete' do |f| %>
+	<%= f.hidden_field :comment_id, value: comment.id %>
+	<%= f.button :submit, 'Delete', class: 'button is-outlined is-small' %>
+<% end %>

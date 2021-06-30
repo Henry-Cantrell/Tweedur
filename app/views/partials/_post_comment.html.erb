@@ -10,8 +10,8 @@
   <div class="media-content">
     <div class="content">
       <p>
-        <%= link_to (user_user_profile_path(post.creator.id)), class:"has-text-black" do %>
-        <strong><%= post.creator.last_name %></strong> <small><%= post.creator.email %></small> <small>31m</small>
+        <%= link_to (user_user_profile_path(comment.author.id)), class:"has-text-black" do %>
+        <strong><%= comment.author.last_name %></strong> <small><%= comment.author.email %></small> <small>31m</small>
         <% end %>
         <br>
         <%= comment.body %>
@@ -24,9 +24,9 @@
         </a>
         <a class="level-item">
 	  <% if current_user.liked_posts.where(liked_post_id: post.id).empty? %>
-          	<%= render partial: "partials/like_button", locals: {post: post, current_user: current_user} %>
+          	<%= render partial: "partials/like_button", locals: {comment: comment, current_user: current_user} %>
 	  <% else %>
-		<%= render partial: "partials/unlike_button", locals: {post: post, current_user: current_user} %> 
+		<%= render partial: "partials/unlike_button", locals: {comment: comment, current_user: current_user} %> 
 	  <% end %>
         </a>
         <div/>
@@ -35,8 +35,8 @@
     </nav>
   </div>
   <div class="media-right">
-    <% if post.creator.id == current_user.id %>
-    	<%= render partial: "partials/delete_post_button", locals: {post: post} %>
+    <% if comment.author.id == current_user.id %>
+    	<%= render partial: "partials/delete_comment_button", locals: {post: post, comment:comment} %>
     <% end %>
   </div>
 </article>

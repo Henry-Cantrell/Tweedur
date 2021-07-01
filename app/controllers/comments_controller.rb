@@ -9,7 +9,7 @@ def create
 end
 
 def destroy
-	@trash_comment = Comment.find_by(id: params[delete_comment][:comment_id])
+	@trash_comment = Comment.find_by(id: params[:delete_comment][:comment_id])
 	
 	if @trash_comment.destroy!
 		redirect_back(fallback_location: root_path)
@@ -20,10 +20,6 @@ private
 
 	def comment_params
 		params.require(:comment).permit(:body, :author_id, :post_id)
-	end
-
-	def delete_comment_params
-		params.require(:delete_comment).permit(:comment_id)
 	end
 
 end

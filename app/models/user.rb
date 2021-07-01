@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_one :user_location
   # Associations for comment ownership on post and comment liking
   has_many :post_comments, class_name: 'Comment', foreign_key: 'author_id'
-  has_many :comment_likes, class_name: 'Comment', foreign_key: 'comment_liker_id'
+  has_many :comment_likes, class_name: 'CommentLike', foreign_key: 'comment_liker_id'
   # Association for avatar
   has_one_attached :avatar
 

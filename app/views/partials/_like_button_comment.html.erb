@@ -1,5 +1,5 @@
 <%= simple_form_for :like_on_comment , url: '/comment_likes', method: 'post' do |f| %>
-	<%= f.hidden_field :liking_user_id, value: current_user.id %>
+	<%= f.hidden_field :comment_liker_id, value: current_user.id %>
 	<%= f.hidden_field :liked_comment_id, value: comment.id %>
 	<%= f.button :submit, 'Like', class: 'button is-outlined is-small' %>
 <% end %>

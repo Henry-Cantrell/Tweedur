@@ -19,7 +19,7 @@ class CommentLikesController < ApplicationController
 	private
 	
 	def comment_like_params
-		params.require(like_on_comment).permit(:comment_id, liking_user_id)
+		params.require(:like_on_comment).permit(:comment_id, :comment_liker_id)
 	end
 
 end

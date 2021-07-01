@@ -20,7 +20,7 @@
     <nav class="level is-mobile">
       <div class="level-left">
         <a class="level-item">
-	  <% if current_user.liked_posts.where(liked_post_id: post.id).empty? %>
+	  <% if current_user.comment_likes.where(comment_id: comment.id).empty? %>
           	<%= render partial: "partials/like_button_comment", locals: {comment: comment, current_user: current_user} %>
 	  <% else %>
 		<%= render partial: "partials/unlike_button_comment", locals: {comment: comment, current_user: current_user} %> 

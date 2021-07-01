@@ -1,0 +1,5 @@
+<%= simple_form_for :like_on_comment , url: '/comment_likes', method: 'delete' do |f| %>
+	<%= f.hidden_field :comment_liker_id, value: current_user.id %>
+	<%= f.hidden_field :comment_id, value: comment.id %>
+	<%= f.button :submit, 'Unlike', class: 'button is-outlined is-small' %>
+<% end %>

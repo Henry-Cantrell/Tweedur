@@ -20,17 +20,14 @@
     <nav class="level is-mobile">
       <div class="level-left">
         <a class="level-item">
-          <span class="icon is-small"><i class="fas fa-reply"></i></span>
-        </a>
-        <a class="level-item">
 	  <% if current_user.liked_posts.where(liked_post_id: post.id).empty? %>
-          	<%= render partial: "partials/like_button", locals: {comment: comment, current_user: current_user} %>
+          	<%= render partial: "partials/like_button_comment", locals: {comment: comment, current_user: current_user} %>
 	  <% else %>
-		<%= render partial: "partials/unlike_button", locals: {comment: comment, current_user: current_user} %> 
+		<%= render partial: "partials/unlike_button_comment", locals: {comment: comment, current_user: current_user} %> 
 	  <% end %>
         </a>
         <div/>
-        <%= post.likes.length %>
+        <%= comment.comment_likes.length %>
       </div>
     </nav>
   </div>

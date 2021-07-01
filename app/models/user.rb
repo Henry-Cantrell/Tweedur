@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  # Associations for post ownership
+  # Associations for post ownership and post liking
   has_many :created_posts, class_name: 'Post', foreign_key: 'creator_id'
   has_many :liked_posts, class_name: 'Like', foreign_key: 'liking_user_id'
   # Associations for the follow relationship
@@ -9,8 +9,9 @@ class User < ApplicationRecord
   has_one :bio, class_name:'UserBio', foreign_key: 'user_id'
   has_one :user_join_date
   has_one :user_location
-  # Associations for comment ownership on post
+  # Associations for comment ownership on post and comment liking
   has_many :post_comments, class_name: 'Comment', foreign_key: 'author_id'
+  has_many :comment_likes, class_name: 'Comment', foreign_key: 'comment_liker_id'
   # Association for avatar
   has_one_attached :avatar
 

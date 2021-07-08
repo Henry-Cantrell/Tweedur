@@ -7,7 +7,7 @@ RSpec.describe CommentLike, type: :model do
         post = user.created_posts.first
 
 	comment = Comment.create(post_id: post.id, author_id: user.id, body: 'test')
-        comment_like = CommentLike.create(id: 1, body: 'testing', comment_liker_id: user.id, comment_id: comment.id)
+        comment_like = CommentLike.create(id: 1, comment_liker_id: user.id, comment_id: comment.id)
 
         expect(comment_like).to be_truthy
     end
